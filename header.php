@@ -16,10 +16,10 @@
     </style>
 </head>
 
-<body>
+<body >
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top "">
+        <div class="container" >
 
             <a class="navbar-brand" href="customers.php">
                 <img src="./image.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2" style="border-radius: 50%;">
@@ -46,6 +46,8 @@
     <div class="container my-5">
 
     </div>
+
+    <div  style="margin-bottom:100px;" ></div>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

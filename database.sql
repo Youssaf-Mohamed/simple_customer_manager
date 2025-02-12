@@ -1,16 +1,20 @@
-create database if not exists lrapp ;
-use lrapp ; 
+CREATE DATABASE hardware_store;
 
+USE electric_store;
 
-CREATE TABLE IF NOT EXISTS users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    last_login TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
-    activated BOOLEAN DEFAULT FALSE,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    privil TINYINT DEFAULT 0
+CREATE TABLE customers (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    balance DECIMAL(10,2) NOT NULL
 );
 
-
+CREATE TABLE transactions (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT(11) NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    type ENUM('deposit', 'withdraw') NOT NULL,
+    notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (customer_id) REFERENCES customers(id)
+);

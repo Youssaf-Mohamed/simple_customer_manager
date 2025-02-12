@@ -41,35 +41,35 @@ foreach ($customers as $customer) {
 
         <div class="card shadow mb-4">
             <div class="card-header bg-info text-white">
-                <h3 class="mb-0">الرصيد الكلي للعملاء</h3>
+                <h3 class="mb-0" style="font-size:27px ;">الرصيد الكلي للعملاء</h3>
             </div>
             <div class="card-body">
-                <h4 class="text-center text-dark" id="total-balance"><?= formatBalance($totalBalance) ?></h4>
+                <h4 class="text-center text-dark" id="total-balance" style="font-size:30px;" ><?= formatBalance($totalBalance) ?></h4>
             </div>
         </div>
 
 
         <div class="card shadow">
             <div class="card-header bg-primary text-white">
-                <h3 class="mb-0">قائمة العملاء</h3>
+                <h3 class="mb-0" style="font-size: 25px;">قائمة العملاء</h3>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead class="bg-light">
                             <tr>
-                                <th class="text-dark">الاسم</th>
-                                <th class="text-dark">الهاتف</th>
-                                <th class="text-dark">الرصيد</th>
-                                <th class="text-dark">الإجراءات</th>
+                                <th class="text-dark" style="font-size: 22px">الاسم</th>
+                                <th class="text-dark" style="font-size: 22px">الهاتف</th>
+                                <th class="text-dark" style="font-size: 22px">الرصيد</th>
+                                <th class="text-dark" style="font-size: 22px">الإجراءات</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($customers as $customer): ?>
                                 <tr>
-                                    <td class="text-dark"><?= htmlspecialchars($customer['name']) ?></td>
-                                    <td class="text-dark"><?= htmlspecialchars($customer['phone']) ?></td>
-                                    <td class="text-dark"><?= formatBalance($customer['balance']) ?></td>
+                                    <td class="text-dark" style="font-size: 19px"><?= htmlspecialchars($customer['name']) ?></td>
+                                    <td class="text-dark" style="font-size: 19px"><?= htmlspecialchars($customer['phone']) ?></td>
+                                    <td class="text-dark" style="font-size: 19px"><?= formatBalance($customer['balance']) ?></td>
                                     <td>
                                         <a href="./customer-details.php?id=<?= $customer['id'] ?>" class="btn btn-sm btn-outline-primary">التفاصيل</a>
                                         <button class="btn btn-sm btn-outline-danger delete-customer-btn" data-id="<?= $customer['id'] ?>" data-balance="<?= $customer['balance'] ?>">حذف</button>
