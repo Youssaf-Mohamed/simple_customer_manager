@@ -1,0 +1,76 @@
+body {
+  background-color: #f8f9fa;
+  font-family: "Tajawal", sans-serif;
+}
+
+.card {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.list-group-item {
+  transition: all 0.3s ease;
+  border-radius: 10px !important;
+  margin-bottom: 5px;
+}
+
+.list-group-item:hover {
+  transform: translateX(10px);
+  background-color: #f8f9fa;
+}
+
+.card-header {
+  transition: background-color 0.3s ease;
+}
+
+.card-header:hover {
+  background-color: #007bff !important;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.navbar {
+  background: linear-gradient(135deg, #007bff, #6f42c1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.nav-link {
+  color: white !important;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* تغيير خلفية عند hover */
+  color: #f0f8ff !important;
+  transform: scale(1.1); /* تكبير طفيف عند hover */
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+/* Styling for the container */
+.container.my-5 {
+  margin-top: 100px !important; /* زيادة المسافة بين الشريط العلوي والمحتوى */
+}

@@ -1,0 +1,16 @@
+create database if not exists lrapp ;
+use lrapp ; 
+
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_login TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+    activated BOOLEAN DEFAULT FALSE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    privil TINYINT DEFAULT 0
+);
+
+

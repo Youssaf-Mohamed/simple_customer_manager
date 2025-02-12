@@ -1,0 +1,6 @@
+<?php
+header("Location: ./customers.php");
+exit();
+
+
+?>
