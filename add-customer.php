@@ -1,15 +1,25 @@
 <?php
+session_start();
 include 'config.php';
 include 'header.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
-    $balance = $_POST['balance'] ?? 0;
+    // استقبال البيانات مع تنقية المدخلات
+    $name = trim($_POST['name']);
+    $phone = trim($_POST['phone']);
+    $balance = isset($_POST['balance']) ? trim($_POST['balance']) : 0;
+
+    // التأكد من تسجيل دخول المستخدم (وجود user_id في الجلسة)
+    if (!isset($_SESSION['user_id'])) {
+        $_SESSION['error'] = "خطأ: يجب تسجيل الدخول أولاً.";
+        header("Location: login.php");
+        exit();
+    }
 
     try {
-        $stmt = $pdo->prepare("INSERT INTO customers (name, phone, balance) VALUES (?, ?, ?)");
-        $stmt->execute([$name, $phone, $balance]);
+        // تضمين user_id من الجلسة في عملية الإدخال
+        $stmt = $pdo->prepare("INSERT INTO customers (user_id, name, phone, balance) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$_SESSION['user_id'], $name, $phone, $balance]);
         $_SESSION['success'] = "تمت إضافة العميل بنجاح";
         header("Location: customers.php");
         exit();
